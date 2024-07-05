@@ -1,17 +1,16 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id ("com.android.library")
 }
 
 android {
-    namespace = "com.instance.sdkexample"
+    namespace = "com.instance.aes_encryption"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.instance.sdkexample"
+
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,8 +33,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(project(":librarymodule"))
-    implementation(project(":aes_encryption"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

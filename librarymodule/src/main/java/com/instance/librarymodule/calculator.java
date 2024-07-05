@@ -18,7 +18,7 @@ import org.mozilla.javascript.Scriptable;
 
 import java.lang.reflect.Field;
 
-public class login extends AppCompatActivity implements View.OnClickListener {
+public class calculator extends AppCompatActivity implements View.OnClickListener {
 
     TextView resultTV, solutionTV;
     MaterialButton buttonC, buttonOpenBrac, buttonCloseBrac, buttonAC, buttonDot;
@@ -29,7 +29,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_calculator);
         resultTV = findViewById(R.id.result_tv);
         solutionTV = findViewById(R.id.solution_tv);
 
@@ -59,7 +59,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(login.this, "Exited from the module", Toast.LENGTH_SHORT).show();
+                Toast.makeText(calculator.this, "Exited from the module", Toast.LENGTH_SHORT).show();
                 finish(); // Finish the activity
             }
         });
@@ -73,7 +73,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
     void assignId(String buttonFieldName, int id) {
         try {
-            Field field = login.class.getDeclaredField(buttonFieldName);
+            Field field = calculator.class.getDeclaredField(buttonFieldName);
             field.setAccessible(true);
             MaterialButton button = findViewById(id);
             field.set(this, button);

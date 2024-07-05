@@ -8,11 +8,11 @@ import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.instance.librarymodule.login;
+import com.instance.librarymodule.calculator;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button;
+    Button button,buttonLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = findViewById(R.id.button);
+        buttonLogin = findViewById(R.id.buttonLogin);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void btnclick(View v) {
 
-                Intent i = new Intent(this, login.class);
+                Intent i = new Intent(this, calculator.class);
+                startActivity(i);
+    }public void LoginButtonClick(View v) {
+
+                Intent i = new Intent(this, com.instance.aes_encryption.AesActivity.class);
                 startActivity(i);
     }
 

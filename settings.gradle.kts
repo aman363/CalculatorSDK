@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "SdkExample"
 include(":app")
 include(":librarymodule")
+include(":aes_encryption")
